@@ -21,7 +21,7 @@ int main() {
 	}
 
 	/* Ignora primeira linha */
-	fgets(data, 64, fp);
+	fgets(data, 63, fp);
 
 	while (fscanf(fp, "%d,%f,%63[^\n]\n", &amostra, &temperatura, data)==3) {
 			printf("%d  --  %f  --- %s\n", amostra, temperatura, data);
