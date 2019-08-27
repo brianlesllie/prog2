@@ -1,3 +1,13 @@
+/*
+ ============================================================================
+ Name        : cam_temp.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
 /** Programa que exibe na tela dados formatados
   * de um arquivo CSV conforme o padrão:
   *         Series;Value;Time
@@ -61,4 +71,7 @@ int main(){
 
 
     fclose(fp);
+    free(dados);
+
+    return 0;
 }
