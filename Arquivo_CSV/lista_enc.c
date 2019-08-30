@@ -85,3 +85,39 @@ void add_cauda(lista_enc_t *lista, no_t* elemento)
         lista->tamanho++;
    }
 }
+
+void add_cabeca(lista_enc_t *lista, no_t* elemento)
+{
+    if (lista == NULL || elemento == NULL){
+        fprintf(stderr,"add_cauda: ponteiros invalidos");
+        exit(EXIT_FAILURE);
+    }
+
+   #ifdef DEBUG
+   printf("Adicionando %p --- tamanho: %d\n", elemento, lista->tamanho);
+   #endif // DEBUG
+
+   //lista vazia
+   if (lista->tamanho == 0)
+   {
+        #ifdef DEBUG
+        printf("add_cauda: add primeiro elemento: %p\n", elemento);
+        #endif // DEBUG
+
+        lista->cauda = elemento;
+        lista->cabeca = elemento;
+        lista->tamanho++;
+
+        desligar_no(elemento);
+   }
+   else {
+        // Remove qualquer ligacao antiga
+        //desligar_no(elemento);
+        // Liga cauda da lista com novo elemento
+        ligar_nos(elemento, lista->cabeca);
+
+        lista->cabeca = elemento;
+        lista->tamanho++;
+   }
+}
+
