@@ -121,3 +121,15 @@ void add_cabeca(lista_enc_t *lista, no_t* elemento)
    }
 }
 
+no_t *remover_cabeca(lista_enc_t *lista){
+    no_t *retirado;
+    //no_t *proximo;
+    retirado=lista->cabeca;
+    //proximo=obter_proximo(retirado);
+    //lista->cabeca=proximo;
+    lista->cabeca=obter_proximo(retirado);
+    //desliga_no(proximo);
+    desliga_no(retirado);
+    lista->tamanho--;
+    return retirado;
+}
