@@ -122,14 +122,25 @@ void add_cabeca(lista_enc_t *lista, no_t* elemento)
 }
 
 no_t *remover_cabeca(lista_enc_t *lista){
-    no_t *retirado;
-    //no_t *proximo;
-    retirado=lista->cabeca;
+    no_t *retirado=obter_cabeca(lista);
+    no_t *proximo=obter_proximo(retirado);
     //proximo=obter_proximo(retirado);
     //lista->cabeca=proximo;
-    lista->cabeca=obter_proximo(retirado);
-    //desliga_no(proximo);
+    lista->cabeca=proximo;
     desliga_no(retirado);
+    desliga_no(proximo);
     lista->tamanho--;
     return retirado;
+}
+
+void liberar_lista(lista_enc_t *lista){
+	no_t *no=obter_cabeca(lista);
+	no_t *no_prox;
+	while(no!=NULL){
+		free(obter_dado(no));
+		no_prox=obter_proximo(no);
+		free(no);
+		no=no_prox;
+	}
+	free(lista);
 }
