@@ -30,4 +30,15 @@ void add_cauda(lista_enc_t *lista, no_t* elemento);
   */
 no_t *obter_cabeca(lista_enc_t *lista);
 
+/**
+  * @brief  Adiciona um nó de lista no começo.
+  * @param	lista: lista encadeada que se deseja adicionar.
+  *         elemento: nó que será adicionado na cabeça.
+  *
+  * @retval Nenhum
+  */
+void add_cabeca(lista_enc_t *lista, no_t* elemento);
+
+no_t *remover_cabeca(lista_enc_t *lista);
+
 #endif // LISTA_ENC_H_INCLUDED
