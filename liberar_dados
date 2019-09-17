@@ -1,0 +1,14 @@
+void liberar_dados(pilha_t *pilha){
+    no_t *no;
+	no_t *no_prox;
+	no=obter_cabeca(pilha->dados);
+	while(pilha_vazia(pilha))
+    {
+		free(obter_dado(no));
+		no_prox=obter_proximo(no);
+		free(no);
+		no=no_prox;
+    }
+	free(pilha->dados);
+	free(pilha);
+}
