@@ -25,14 +25,15 @@ float temperatura_media(lista_enc_t *lista){
 	dado_t *dado;
 	float temp_med=0,temp;
 	no_t *meu_no;
-	no_t *prox_no;                  //Variável desnecessária
+	//no_t *prox_no;                  //Variável desnecessária
 	meu_no=obter_cabeca(lista);
 	while(meu_no!=NULL){
 		dado=obter_dado(meu_no);
 		temp=obter_temperatura(dado);
 		temp_med=temp_med+temp;
-		prox_no=obter_proximo(meu_no);
-		meu_no=prox_no;
+		//prox_no=obter_proximo(meu_no);
+		//meu_no=prox_no;
+		meu_no=obter_proximo(meu_no);
 	}
 	tam=obter_tamanho(lista);
 	temp_med=temp_med/tam;
@@ -45,8 +46,9 @@ float temperatura_max(lista_enc_t *lista){
     /* Implemente aqui */
 	dado_t *dado;
 	float temp_max,temp;        //temp_max deve ser inicilizado!
+	temp_max=-10000000000;
 	no_t *meu_no;
-	no_t *prox_no;              // variável desnecessária
+	//no_t *prox_no;              // variável desnecessária
 	meu_no=obter_cabeca(lista);
 	dado=obter_dado(meu_no);
 	temp=obter_temperatura(dado);
@@ -58,8 +60,9 @@ float temperatura_max(lista_enc_t *lista){
 			temp_max=temp;
 		}
 		//temp_med=temp_med+temp;
-		prox_no=obter_proximo(meu_no);
-		meu_no=prox_no;
+		//ox_no=obter_proximo(meu_no);
+		//u_no=prox_no;
+		meu_no=obter_proximo(meu_no);
 	}
 	//tam=obter_tamanho(lista);
 	//temp_med=temp_med/tam;
