@@ -35,7 +35,9 @@ int main(void) {
 	cria_adjacencia(g, 4, 5);
 	cria_adjacencia(g, 6, 7);
 
-
+	//grafo->vertices[i].dist=-1;
+	//grafo->vertices[i].pai=NULL;
+	
 	/* Imprime matriz */
 	for (i=0; i < 8; i++){
 		for (j=0; j < 8; j++)
