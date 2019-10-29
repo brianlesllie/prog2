@@ -13,7 +13,7 @@ int main(){
     int i=0;
     int n_linhas = 0;
 
-    dado_t *dado=ler_dados_csv("cameta_temp.csv",&n_linhas);
+    dado_t *dado=ler_dados_csv("camera_temp.csv",&n_linhas);
     /* Imprima os dados:*/
     for (i=0; i < n_linhas; i++){
     	printf( "%d,%f,%s\n", obter_amostra(dado),obter_temperatura(dado),obter_tempo(dado));
