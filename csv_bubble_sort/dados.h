@@ -15,9 +15,10 @@ dado_t * criar_dado (int amostra, float temperatura, char * timestamp);
 dado_t **ler_dados_csv(char *nome_do_arquivo, int *n_linhas);
 
 /* Outras funções aqui: fazer os comentários */
-int obter_amostra(dado_t *dado);
-float obter_temperatura(dado_t *dado);
-char *obter_tempo(dado_t *dado);
+int obter_amostra(dado_t **dado, int i);
+float obter_temperatura(dado_t **dado, int i);
+char *obter_tempo(dado_t **dado, int i);
 
+void liberar_dados(dado_t **vetor, int n_linhas);
 
 #endif

@@ -89,13 +89,13 @@ void liberar_dados(dado_t **vetor, int n_linhas){
     free(vetor);
 }
 
-int obter_amostra(dado_t *dado){
-    return (dado->amostra);
+int obter_amostra(dado_t **dado, int i){
+    return (dado[i]->amostra);
 }
-float obter_temperatura(dado_t *dado){
-    return dado->temperatura;
+float obter_temperatura(dado_t **dado, int i){
+    return dado[i]->temperatura;
 }
-char *obter_tempo(dado_t *dado){
-    return dado->tempo;
+char *obter_tempo(dado_t **dado, int i){
+    return dado[i]->tempo;
 }
 
